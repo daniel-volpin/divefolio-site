@@ -1,0 +1,63 @@
+:root {
+  color-scheme: light dark;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  line-height: 1.55;
+  --accent: #0789ba;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main,
+nav {
+  width: min(44rem, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-block: 3rem 5rem;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 35rem;
+  font-size: 1.2rem;
+  color: color-mix(in srgb, CanvasText 70%, Canvas);
+}
+
+.card {
+  margin-block: 2rem;
+  padding: 1.5rem;
+  border: 1px solid color-mix(in srgb, CanvasText 15%, Canvas);
+  border-radius: 1.25rem;
+}

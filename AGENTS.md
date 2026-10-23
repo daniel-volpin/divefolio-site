@@ -13,7 +13,7 @@ Public support, landing, and privacy documentation site for the native Divefolio
 
 ## Boundaries & Relationships
 
-- **Companion Repo**: The Swift/iOS native app source code is located in `apps/divefolio-ios`.
+- **Companion Repo**: The Swift/iOS native app source code is in the private `daniel-volpin/divefolio-ios` repository. Its `site/` folder keeps a copy of these pages; change both together.
 - **Policy Invariants**: Privacy and support copy must accurately reflect the offline-first, exportable `.divefolio` format and local storage behavior of the iOS application.
 - **Tech Stack**: Keep pages dependency-free, semantic HTML5 and vanilla CSS. Do not introduce heavy JavaScript frameworks or external tracking scripts.
 

@@ -3,7 +3,25 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
   line-height: 1.55;
-  --accent: #0789ba;
+  --accent: #0779a3;
+  --page: #f4f6f8;
+  --surface: #ffffff;
+  --text: #11181d;
+  --muted: #4a565f;
+  --line: #d9e0e5;
+  --tint: #e3f1f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #5cc4ec;
+    --page: #0c1115;
+    --surface: #161d23;
+    --text: #eef3f6;
+    --muted: #a7b3bc;
+    --line: #2a343c;
+    --tint: #10283a;
+  }
 }
 
 * {
@@ -12,17 +30,21 @@
 
 body {
   margin: 0;
+  background: var(--page);
+  color: var(--text);
 }
 
 main,
-nav {
-  width: min(44rem, calc(100% - 2rem));
+nav,
+footer,
+.hero {
+  width: min(64rem, calc(100% - 2rem));
   margin-inline: auto;
 }
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   padding-block: 1.25rem;
 }
 
@@ -31,11 +53,16 @@ nav a {
   text-decoration: none;
 }
 
+nav a[aria-current="page"]:not(:first-child) {
+  color: var(--accent);
+}
+
 main {
-  padding-block: 3rem 5rem;
+  padding-block: 3rem 4rem;
 }
 
 h1 {
+  margin-block: 0.5rem 1.25rem;
   font-size: clamp(2.4rem, 8vw, 4.5rem);
   letter-spacing: -0.04em;
   line-height: 1;
@@ -43,21 +70,129 @@ h1 {
 
 h2 {
   margin-top: 2rem;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 a {
   color: var(--accent);
 }
 
+code {
+  font-size: 0.92em;
+}
+
 .lede {
   max-width: 35rem;
   font-size: 1.2rem;
-  color: color-mix(in srgb, CanvasText 70%, Canvas);
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .card {
   margin-block: 2rem;
   padding: 1.5rem;
-  border: 1px solid color-mix(in srgb, CanvasText 15%, Canvas);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 1.25rem;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.private {
+  background: var(--tint);
+  border-color: transparent;
+}
+
+.note,
+.safety {
+  color: var(--muted);
+}
+
+.safety {
+  max-width: 40rem;
+  font-size: 0.95rem;
+}
+
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  padding-block: 2rem 1rem;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  padding: 0.3rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.phone {
+  width: min(18rem, 78vw);
+  margin: 0 auto;
+}
+
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 2.2rem;
+  box-shadow: 0 1.25rem 3rem -1.5rem rgb(7 50 70 / 0.45);
+}
+
+.feature {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.feature p {
+  max-width: 32rem;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-block: 1.5rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 1.3fr 1fr;
+    padding-block: 3rem 2rem;
+  }
+
+  .feature {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+  }
+
+  .feature:nth-of-type(even) > figure {
+    order: -1;
+  }
 }

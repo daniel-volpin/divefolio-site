@@ -1,6 +1,6 @@
 # Divefolio site
 
-Public support and privacy pages for the native Divefolio iOS application.
+Landing, support, and privacy pages for the native Divefolio iOS application, published by GitHub Pages from `main`.
 
 - [Divefolio](https://daniel-volpin.github.io/divefolio-site/)
 - [Support](https://daniel-volpin.github.io/divefolio-site/support.html)

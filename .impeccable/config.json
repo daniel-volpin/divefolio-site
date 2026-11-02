@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-02T00:41:10.752Z",
+        "reason": "Claude: the h1 display headline uses line-height 1 on purpose, as large display type does; body text is 1.55"
+      }
+    ]
+  }
+}
